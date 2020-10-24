@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div style="width: 256px; margin: 16px auto;">
-      <input type="checkbox" v-model="checkbox1"> Disable Controls
-      <br>
-      <br>
-      <br>
-      <br>
+    <div style="width: 256px; margin: 16px auto">
+      <input type="checkbox" v-model="checkbox1" /> Disable Controls
+      <br />
+      <br />
+      <br />
+      <br />
       <span>rbDropdown</span>
       <rbDropdown
         @input="setDropdownSelectedItem"
@@ -14,8 +14,10 @@
         :value="'12:00 AM'"
         :disabled="checkbox1"
       />
-      <div class="text-sm" :class="{'text-gray-100': checkbox1}">Selected Item: {{selectedItem}}</div>
-      <br>
+      <div class="text-sm" :class="{ 'text-gray-100': checkbox1 }">
+        Selected Item: {{ selectedItem }}
+      </div>
+      <br />
       <rbDropdown
         label="name"
         @input="setDropdownSelectedItem2"
@@ -24,30 +26,52 @@
         :disabled="checkbox1"
         :resetAfter="true"
       />
-      <div class="text-sm" :class="{'text-gray-100': checkbox1}">Selected Item: {{selectedItem2}}</div>
-      <br>
-      <br>
+      <div class="text-sm" :class="{ 'text-gray-100': checkbox1 }">
+        Selected Item: {{ selectedItem2 }}
+      </div>
+      <br />
+      <br />
       <span>rbNumberUpDown</span>
-      <rbNumberUpDown @input="setSelectedNumber" :value="6" :minValue="1"/>
-      <span>Selected Number: {{selectedNumber}}</span>
-      <br>
-      <br>
-      <br>
-      <br>
+      <rbNumberUpDown @input="setSelectedNumber" :value="6" :minValue="1" />
+      <span>Selected Number: {{ selectedNumber }}</span>
+      <br />
+      <br />
+      <br />
+      <br />
       <span>rbNumberUpDown</span>
-      <rbNumberUpDown @input="setSelectedNumberB" :value="6" :minValue="1" :disabled="!checkbox1"/>
-      <div
-        class="text-base"
-        :class="{'text-gray-300': !checkbox1}"
-      >Selected Number: {{selectedNumberB}}</div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <rb-modal v-if="showModal" ref="rbModalBody" :verticalAlign="'top'" @close="dialog_onCancel">
+      <rbNumberUpDown
+        @input="setSelectedNumberB"
+        :value="6"
+        :minValue="1"
+        :disabled="!checkbox1"
+      />
+      <div class="text-base" :class="{ 'text-gray-300': !checkbox1 }">
+        Selected Number: {{ selectedNumberB }}
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <rb-modal
+        v-if="showModal"
+        ref="rbModalBody"
+        :verticalAlign="'top'"
+        @close="dialog_onCancel"
+      >
         <template slot="body"></template>
       </rb-modal>
       <button @click="buttonShowModal_onClick">ShowModal</button>
+      <br />
+      <br />
+      <br />
+    </div>
+    <div>
+      <rbRichTextbox
+        id="riu"
+        v-model="myRichtext"
+        :other_options="rbRichTextboxOptions"
+      >
+      </rbRichTextbox>
     </div>
   </div>
 </template>
@@ -57,6 +81,7 @@ import HelloWorld from "./components/HelloWorld";
 import rbDropdown from "./components/rbDropdown";
 import rbModal from "./components/rbModal";
 import rbNumberUpDown from "./components/rbNumberUpDown";
+import rbRichTextbox from "./components/rbRichTextbox";
 
 export default {
   name: "App",
@@ -64,7 +89,8 @@ export default {
     HelloWorld,
     rbDropdown,
     rbModal,
-    rbNumberUpDown
+    rbNumberUpDown,
+    rbRichTextbox,
   },
   methods: {
     buttonShowModal_onClick() {
@@ -91,7 +117,7 @@ export default {
     },
     setSelectedNumberB(n) {
       this.selectedNumberB = n;
-    }
+    },
   },
   data() {
     return {
@@ -144,7 +170,7 @@ export default {
         "10:00 PM",
         "10:30 PM",
         "11:00 PM",
-        "11:30 PM"
+        "11:30 PM",
       ],
       locationOptions: [
         { id: 1, name: "Lotus" },
@@ -156,7 +182,7 @@ export default {
         { id: 7, name: "Highland" },
         { id: 8, name: "Cypress" },
         { id: 9, name: "Church" },
-        { id: 10, name: "Monterey" }
+        { id: 10, name: "Monterey" },
       ],
       abc: 1,
       checkbox1: false,
@@ -164,9 +190,14 @@ export default {
       selectedItem2: null,
       selectedNumber: null,
       selectedNumberB: null,
-      showModal: false
+      showModal: false,
+      myRichtext: "",
+      rbRichTextboxOptions: {
+        branding: false,
+        menubar: false,
+      },
     };
-  }
+  },
 };
 </script>
 
