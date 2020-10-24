@@ -74,7 +74,7 @@ export default {
         plugins: this.plugins,
         init_instance_callback: this.initEditor,
       };
-      tinymce.init(this.concatAssciativeArrays(options, this.other_options));
+      tinymce.init(this.concatAssciativeArrays(options, this.options));
     },
     initEditor(editor) {
       this.editor = editor;
@@ -151,7 +151,7 @@ export default {
       default: "",
       type: String,
     },
-    other_options: {
+    options: {
       default: function () {
         return {};
       },

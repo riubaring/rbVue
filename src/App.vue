@@ -69,9 +69,14 @@
       <rbRichTextbox
         id="riu"
         v-model="myRichtext"
-        :other_options="rbRichTextboxOptions"
+        :options="rbRichTextboxOptions"
       >
       </rbRichTextbox>
+    </div>
+    <div>
+      <rbRichTextbox
+        id="testRbRichTextbox"
+        v-model="myRichtext2"
     </div>
   </div>
 </template>
@@ -192,6 +197,7 @@ export default {
       selectedNumberB: null,
       showModal: false,
       myRichtext: "",
+      myRichtext2: "",
       rbRichTextboxOptions: {
         branding: false,
         menubar: false,
