@@ -77,6 +77,8 @@
       <rbRichTextbox
         id="testRbRichTextbox"
         v-model="myRichtext2"
+      >
+      </rbRichTextbox>
     </div>
   </div>
 </template>
