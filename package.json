@@ -1,5 +1,5 @@
 {
-  "name": "riu-baring-vue-components",
+  "name": "myvue",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -45,5 +45,5 @@
     "not ie <= 8"
   ],
   "keywords": [],
-  "description": ""
+  "description": "Collections of Vue components to support bigger components"
 }
