@@ -56,7 +56,7 @@ import "tinymce/plugins/visualchars";
 export default {
   data() {
     return {
-      content: "",
+      content: this.value,
       editor: null,
       cTinyMce: null,
       checkerTimeout: null,
