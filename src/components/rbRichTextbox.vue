@@ -144,7 +144,7 @@ export default {
     },
     toolbar1: {
       default:
-        "undo redo | formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | help",
+        "undo redo | formatselect | bold italic forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | help",
       type: String,
     },
     toolbar2: {
