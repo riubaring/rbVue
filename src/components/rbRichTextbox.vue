@@ -69,8 +69,7 @@ export default {
       let options = {
         selector: "#" + this.id,
         skin: false,
-        toolbar1: this.toolbar1,
-        toolbar2: this.toolbar2,
+        toolbar: this.toolbar,
         plugins: this.plugins,
         init_instance_callback: this.initEditor,
       };
@@ -142,13 +141,9 @@ export default {
       },
       type: Array,
     },
-    toolbar1: {
+    toolbar: {
       default:
         "undo redo | formatselect | bold italic forecolor backcolor | link | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat | help",
-      type: String,
-    },
-    toolbar2: {
-      default: "",
       type: String,
     },
     options: {

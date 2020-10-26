@@ -74,10 +74,7 @@
       </rbRichTextbox>
     </div>
     <div>
-      <rbRichTextbox
-        id="testRbRichTextbox"
-        v-model="myRichtext2"
-      >
+      <rbRichTextbox id="testRbRichTextbox" v-model="myRichtext2">
       </rbRichTextbox>
     </div>
   </div>
